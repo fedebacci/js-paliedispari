@@ -1,6 +1,11 @@
 // * TODO: UTILIZZARE QUESTI VALORI PER MODIFICARE GLI ATTRIBUTI DELL'INPUT SENZA DOVER MODIFICARE HTML
+const startValue = 1;
 const maxNumber = 5;
 const minNumber = 1;
+const numberInput = document.getElementById('userNumber');
+numberInput.value = startValue;
+numberInput.max = maxNumber;
+numberInput.min = minNumber;
 
 const btnPlayOddOrEven = document.getElementById('playOddOrEven');
 btnPlayOddOrEven.addEventListener('click', playOddOrEven);
@@ -11,16 +16,10 @@ function playOddOrEven() {
 
     const userChoice = document.querySelector('input:checked').id;
     console.debug("userChoice", userChoice);
-    let userNumber = parseInt(document.getElementById('userNumber').value);
-    console.debug("userNumber PRIMA DEL CONTROLLO", userNumber);
-    console.debug("isNaN(userNumber)", isNaN(userNumber));
+    let userNumber = parseInt(numberInput.value);
+    console.debug("userNumber", userNumber);
     
-    // * TODO: PER NUMERI INFERIORI A 1 || NUMERI SUPERIORI A 5, AVVERTIRE L'UTENTE DELL'ERRORE E RICOMINCIARE
-    // if (userNumber < minNumber || isNaN(userNumber)) userNumber = minNumber;
-    // if (userNumber > maxNumber) userNumber = maxNumber;
-    // console.debug("userNumber DOPO IL CONTROLLO", userNumber);
-    // if (userNumber < minNumber || isNaN(userNumber) || userNumber > maxNumber) throw new Error ('Devi inserire un numero da 1 a 5');
-    if (userNumber < minNumber || isNaN(userNumber) || userNumber > maxNumber) return alertInputError(userNumber, minNumber, maxNumber, document.getElementById('userNumber'));
+    if (isNaN(userNumber) || userNumber < minNumber || userNumber > maxNumber) return alertInputError(userNumber, minNumber, maxNumber, numberInput);
     
     const computerNumber = generateRandomNumber(maxNumber, minNumber);
     console.debug("computerNumber", computerNumber);
@@ -41,7 +40,6 @@ function generateRandomNumber (max, min) {
 };
 
 function sumNumbers(firstNumber, secondNumber) {
-    // IL CONTROLLO PER VEDERE SE SONO NUMERI FORSE MEGLIO FARLO SOPRA
     return firstNumber + secondNumber;
 }
 
@@ -56,7 +54,7 @@ function checkVictory(userChoice, isOddOrEven) {
 
 function alertInputError(userNumber, minNumber, maxNumber, input) {
     if (isNaN(userNumber)) userNumber = 'del testo';
-    input.value = 1;
+    input.value = startValue;
     alert(`
         C'è stato un errore con il valore inserito.
         Devi inserire un numero compreso tra ${minNumber} e ${maxNumber}.
