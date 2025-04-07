@@ -1,12 +1,14 @@
 const btnCheckIfPalindrome = document.getElementById('checkIfPalindrome');
+btnCheckIfPalindrome.addEventListener('click', tellIfPalindrome);
 
-btnCheckIfPalindrome.addEventListener('click', function () {
+
+
+function tellIfPalindrome () {
     const valueToCheck = document.getElementById('valueToCheck').value;
     const isValuePalindrome = isPalindrome(valueToCheck);
     const message = isValuePalindrome === true ? `"${valueToCheck}" è un palindromo!` : `"${valueToCheck}" non è un palindromo!`;
     alert(message);
-});
-
+};
 function isPalindrome(value) {
     
     value = value.toString().toLowerCase();

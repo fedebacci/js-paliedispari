@@ -82,6 +82,32 @@
                                 Dichiariamo chi ha vinto.
                             </li>
                         </ol>
+                        <form class="my-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="even" checked />
+                                <label class="form-check-label" for="even">
+                                    Pari
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="odd" />
+                                <label class="form-check-label" for="odd">
+                                    Dispari
+                                </label>
+                            </div>
+
+                            <label for="userNumber" class="form-label">
+                                Inserisci un numero da 1 a 5
+                            </label>
+                            <input type="number" class="form-control" id="userNumber" aria-describedby="userNumberHelp"
+                                placeholder="Inserisci qui il tuo numero" max="5" min="1" value="1" />
+                            <div id="userNumberHelp" class="form-text">
+                                Inserisci sopra il tuo numero
+                            </div>
+                        </form>
+                        <button class="btn btn-primary" id="playOddOrEven">
+                            Gioca a pari o dispari
+                        </button>
                     </div>
                 </div>
             </div>
