@@ -2,16 +2,21 @@
 const maxNumber = 5;
 const minNumber = 1;
 const startValue = generateRandomNumber(maxNumber, minNumber);
+
 const numberInput = document.getElementById('userNumber');
 numberInput.value = startValue;
 numberInput.max = maxNumber;
 numberInput.min = minNumber;
+
 const minNumberPlaceholder = document.getElementById('minNumberPlaceholder');
 const maxNumberPlaceholder = document.getElementById('maxNumberPlaceholder');
 minNumberPlaceholder.innerText = minNumber;
 maxNumberPlaceholder.innerText = maxNumber;
 
 const showResults = document.getElementById('showResults');
+const showScore = document.getElementById('showScore');
+let userScore = 0;
+let computerScore = 0;
 
 const btnPlayOddOrEven = document.getElementById('playOddOrEven');
 btnPlayOddOrEven.addEventListener('click', playOddOrEven);
@@ -37,7 +42,13 @@ function playOddOrEven() {
     console.debug("isOddOrEven", isOddOrEven);
 
     const victoryMessage = userChoice === isOddOrEven ? `L'utente ha vinto!` : `Il computer ha vinto!`;
-    showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven)
+    if (userChoice === isOddOrEven) {
+        userScore ++;
+    } else {
+        computerScore ++;
+    }
+    showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven, userScore, computerScore);
+    numberInput.value = generateRandomNumber(maxNumber, minNumber);
 };
 
 
@@ -54,10 +65,10 @@ function checkIfOddOrEven(number) {
     return number % 2 === 0 ? 'pari' : 'dispari';
 }
 
-function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven) {
+function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven, userScore, computerScore) {
     const dataToShow = `
         <strong>${victoryMessage}</strong>
-        <br/>
+        <p>
         Hai scelto: ${userChoice}
         <br/>
         Il tuo numero: ${userNumber}
@@ -65,6 +76,8 @@ function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum
         Il numero del computer: ${computerNumber}
         <br/>
         La somma dei due numeri: ${sum} (${isOddOrEven})
+        </p>
+        Punteggio: utente = ${userScore} / computer = ${computerScore}
     `
     alert(`
             ${victoryMessage}
@@ -73,6 +86,7 @@ function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum
             Il tuo numero: ${userNumber}
             Il numero del computer: ${computerNumber}
             La somma dei due numeri: ${sum} (${isOddOrEven})
+            Punteggio: utente = ${userScore} / computer = ${computerScore}
         `);
     if (showResults.classList.contains('d-none')) showResults.classList.remove('d-none');
     showResults.innerHTML = dataToShow;
