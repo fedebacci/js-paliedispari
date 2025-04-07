@@ -11,6 +11,8 @@ const maxNumberPlaceholder = document.getElementById('maxNumberPlaceholder');
 minNumberPlaceholder.innerText = minNumber;
 maxNumberPlaceholder.innerText = maxNumber;
 
+const showResults = document.getElementById('showResults');
+
 const btnPlayOddOrEven = document.getElementById('playOddOrEven');
 btnPlayOddOrEven.addEventListener('click', playOddOrEven);
 
@@ -49,10 +51,21 @@ function sumNumbers(firstNumber, secondNumber) {
 }
 
 function checkIfOddOrEven(number) {
-    return number % 2 === 0 ? 'even' : 'odd';
+    return number % 2 === 0 ? 'pari' : 'dispari';
 }
 
 function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven) {
+    const dataToShow = `
+        <strong>${victoryMessage}</strong>
+        <br/>
+        Hai scelto: ${userChoice}
+        <br/>
+        Il tuo numero: ${userNumber}
+        <br/>
+        Il numero del computer: ${computerNumber}
+        <br/>
+        La somma dei due numeri: ${sum} (${isOddOrEven})
+    `
     alert(`
             ${victoryMessage}
 
@@ -60,7 +73,9 @@ function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum
             Il tuo numero: ${userNumber}
             Il numero del computer: ${computerNumber}
             La somma dei due numeri: ${sum} (${isOddOrEven})
-        `)
+        `);
+    if (showResults.classList.contains('d-none')) showResults.classList.remove('d-none');
+    showResults.innerHTML = dataToShow;
 }
 
 

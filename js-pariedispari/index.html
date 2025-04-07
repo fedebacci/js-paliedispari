@@ -82,33 +82,39 @@
                                 Dichiariamo chi ha vinto.
                             </li>
                         </ol>
-                        <form class="my-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="radioDefault" id="even" checked />
-                                <label class="form-check-label" for="even">
-                                    Pari
+                        <div class="card p-3 my-4">
+                            <form>
+                                <p class="fw-bold mb-3">
+                                    Scegli pari o dispari
+                                </p>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioDefault" id="pari"
+                                        checked />
+                                    <label class="form-check-label" for="pari">
+                                        Pari
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioDefault" id="dispari" />
+                                    <label class="form-check-label" for="dispari">
+                                        Dispari
+                                    </label>
+                                </div>
+                                <label for="userNumber" class="form-label mt-3 fw-bold">
+                                    Inserisci un numero da <span id="minNumberPlaceholder">1</span> a <span
+                                        id="maxNumberPlaceholder">5</span>
                                 </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="radioDefault" id="odd" />
-                                <label class="form-check-label" for="odd">
-                                    Dispari
-                                </label>
-                            </div>
-
-                            <label for="userNumber" class="form-label">
-                                Inserisci un numero da <span id="minNumberPlaceholder">1</span> a <span
-                                    id="maxNumberPlaceholder">5</span>
-                            </label>
-                            <input type="number" class="form-control" id="userNumber" aria-describedby="userNumberHelp"
-                                value="1" />
-                            <div id="userNumberHelp" class="form-text">
-                                Inserisci sopra il tuo numero
-                            </div>
-                        </form>
-                        <button class="btn btn-primary" id="playOddOrEven">
-                            Gioca a pari o dispari
-                        </button>
+                                <input type="number" class="form-control" id="userNumber"
+                                    aria-describedby="userNumberHelp" value="1" />
+                                <div id="userNumberHelp" class="form-text">
+                                    Inserisci sopra il tuo numero
+                                </div>
+                            </form>
+                            <button class="btn btn-primary mt-3" id="playOddOrEven">
+                                Gioca a pari o dispari
+                            </button>
+                        </div>
+                        <div class="card p-3 d-none" id="showResults"></div>
                     </div>
                 </div>
             </div>
