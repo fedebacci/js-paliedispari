@@ -34,7 +34,8 @@ function playOddOrEven() {
     const isOddOrEven = checkIfOddOrEven(sum);
     console.debug("isOddOrEven", isOddOrEven);
 
-    checkVictory(userChoice, isOddOrEven);
+    const victoryMessage = userChoice === isOddOrEven ? `L'utente ha vinto!` : `Il computer ha vinto!`;
+    showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven)
 };
 
 
@@ -51,11 +52,19 @@ function checkIfOddOrEven(number) {
     return number % 2 === 0 ? 'even' : 'odd';
 }
 
-function checkVictory(userChoice, isOddOrEven) {
-    let message = userChoice === isOddOrEven ? `L'utente ha vinto!` : `Il computer ha vinto!`;
-    
-    alert(message);
+function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven) {
+    alert(`
+            ${victoryMessage}
+
+            Hai scelto: ${userChoice}
+            Il tuo numero: ${userNumber}
+            Il numero del computer: ${computerNumber}
+            La somma dei due numeri: ${sum} (${isOddOrEven})
+        `)
 }
+
+
+
 
 function alertInputError(userNumber, minNumber, maxNumber, input) {
     if (isNaN(userNumber)) userNumber = 'del testo';
