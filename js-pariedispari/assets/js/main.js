@@ -1,11 +1,15 @@
 // * TODO: UTILIZZARE QUESTI VALORI PER MODIFICARE GLI ATTRIBUTI DELL'INPUT SENZA DOVER MODIFICARE HTML
-const startValue = 1;
 const maxNumber = 5;
 const minNumber = 1;
+const startValue = generateRandomNumber(maxNumber, minNumber);
 const numberInput = document.getElementById('userNumber');
 numberInput.value = startValue;
 numberInput.max = maxNumber;
 numberInput.min = minNumber;
+const minNumberPlaceholder = document.getElementById('minNumberPlaceholder');
+const maxNumberPlaceholder = document.getElementById('maxNumberPlaceholder');
+minNumberPlaceholder.innerText = minNumber;
+maxNumberPlaceholder.innerText = maxNumber;
 
 const btnPlayOddOrEven = document.getElementById('playOddOrEven');
 btnPlayOddOrEven.addEventListener('click', playOddOrEven);
@@ -48,7 +52,8 @@ function checkIfOddOrEven(number) {
 }
 
 function checkVictory(userChoice, isOddOrEven) {
-    const message = userChoice === isOddOrEven ? `L'utente ha vinto!` : `Il computer ha vinto!`;
+    let message = userChoice === isOddOrEven ? `L'utente ha vinto!` : `Il computer ha vinto!`;
+    
     alert(message);
 }
 
