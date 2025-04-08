@@ -26,5 +26,5 @@ function isPalindrome(value) {
         };
     };
 
-    return value.replaceAll(' ', '') === reversedValue ? true : false;
+    return value.replaceAll(' ', '') === reversedValue;
 };
