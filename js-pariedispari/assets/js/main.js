@@ -1,3 +1,34 @@
+// * ATTENZIONE: SPOSTO QUI LE ARROW FUNCTION PERCHE PERDONO L'HOISTING, QUINDI SONO NON DEFINITE SE LE LASCIO IN FONDO
+
+// function generateRandomNumber (max, min) {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
+// * ARROW FUNCTION
+// const generateRandomNumber = (max, min) => {
+//     return Math.floor(Math.random() * (max - min + 1)) + min;
+// };
+// * ARROW FUNCTION CON RETURN IMPLICITO
+const generateRandomNumber = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+
+// * ARROW FUNCTION CON RETURN IMPLICITO
+// function sumNumbers(firstNumber, secondNumber) {
+//     return firstNumber + secondNumber;
+// };
+const sumNumbers = (firstNumber, secondNumber) => firstNumber + secondNumber;
+    
+// function checkIfOddOrEven(number) {
+//     return number % 2 === 0 ? 'pari' : 'dispari';
+// };
+// * ARROW FUNCTION CON RETURN IMPLICITO
+const checkIfOddOrEven = (number) => number % 2 === 0 ? 'pari' : 'dispari';
+
+
+
+
+
+
+
 // * TODO: UTILIZZARE QUESTI VALORI PER MODIFICARE GLI ATTRIBUTI DELL'INPUT SENZA DOVER MODIFICARE HTML
 const maxNumber = 5;
 const minNumber = 1;
@@ -20,6 +51,10 @@ let computerScore = 0;
 
 const btnPlayOddOrEven = document.getElementById('playOddOrEven');
 btnPlayOddOrEven.addEventListener('click', playOddOrEven);
+
+
+
+
 
 
 function playOddOrEven() {
@@ -53,17 +88,9 @@ function playOddOrEven() {
 
 
 
-function generateRandomNumber (max, min) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
 
-function sumNumbers(firstNumber, secondNumber) {
-    return firstNumber + secondNumber;
-};
 
-function checkIfOddOrEven(number) {
-    return number % 2 === 0 ? 'pari' : 'dispari';
-};
+
 
 function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven, userScore, computerScore) {
     const dataToShow = `
