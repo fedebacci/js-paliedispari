@@ -1,4 +1,4 @@
-// * ATTENZIONE: SPOSTO QUI LE ARROW FUNCTION PERCHE PERDONO L'HOISTING, QUINDI SONO NON DEFINITE SE LE LASCIO IN FONDO
+// * ATTENZIONE: SPOSTO QUI LE ARROW FUNCTION PERCHÈ PERDONO L'HOISTING, QUINDI SONO NON DEFINITE SE LE LASCIO IN FONDO
 
 // function generateRandomNumber (max, min) {
 //     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -9,7 +9,6 @@
 // };
 // * ARROW FUNCTION CON RETURN IMPLICITO
 const generateRandomNumber = (max, min) => Math.floor(Math.random() * (max - min + 1)) + min;
-
 
 // * ARROW FUNCTION CON RETURN IMPLICITO
 // function sumNumbers(firstNumber, secondNumber) {
@@ -28,10 +27,6 @@ const checkIfOddOrEven = (number) => number % 2 === 0 ? 'pari' : 'dispari';
 
 
 
-
-
-
-// * TODO: UTILIZZARE QUESTI VALORI PER MODIFICARE GLI ATTRIBUTI DELL'INPUT SENZA DOVER MODIFICARE HTML
 const maxNumber = 5;
 const minNumber = 1;
 const startValue = generateRandomNumber(maxNumber, minNumber);
@@ -101,8 +96,6 @@ function playOddOrEven() {
 
 
 
-
-
 function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven, userScore, computerScore) {
     const dataToShow = `
         <strong>${victoryMessage}</strong>
@@ -129,9 +122,6 @@ function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum
     if (showResults.classList.contains('d-none')) showResults.classList.remove('d-none');
     showResults.innerHTML = dataToShow;
 };
-
-
-
 
 function alertInputError(userNumber, minNumber, maxNumber, input) {
     if (isNaN(userNumber)) userNumber = 'del testo';
