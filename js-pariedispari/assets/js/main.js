@@ -59,11 +59,11 @@ function generateRandomNumber (max, min) {
 
 function sumNumbers(firstNumber, secondNumber) {
     return firstNumber + secondNumber;
-}
+};
 
 function checkIfOddOrEven(number) {
     return number % 2 === 0 ? 'pari' : 'dispari';
-}
+};
 
 function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven, userScore, computerScore) {
     const dataToShow = `
@@ -78,7 +78,7 @@ function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum
         La somma dei due numeri: ${sum} (${isOddOrEven})
         </p>
         Punteggio: utente = ${userScore} / computer = ${computerScore}
-    `
+    `;
     alert(`
             ${victoryMessage}
 
@@ -90,7 +90,7 @@ function showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum
         `);
     if (showResults.classList.contains('d-none')) showResults.classList.remove('d-none');
     showResults.innerHTML = dataToShow;
-}
+};
 
 
 
@@ -103,4 +103,4 @@ function alertInputError(userNumber, minNumber, maxNumber, input) {
         Devi inserire un numero compreso tra ${minNumber} e ${maxNumber}.
         Tu hai inserito: ${userNumber}
     `);
-}
+};
