@@ -15,7 +15,7 @@ const generateRandomNumber = (max, min) => Math.floor(Math.random() * (max - min
 // function sumNumbers(firstNumber, secondNumber) {
 //     return firstNumber + secondNumber;
 // };
-// * NB: QUESTA FUNZIONE, SICCOME SOMMO SEMPRE LE STESSE DUE VARIABILI, NON SERVE
+// * NB: LA FUNZIONE SUM, SICCOME SOMMO SEMPRE LE STESSE DUE VARIABILI, NON SERVE
 // * POSSO PASSARE DIRETTAMENTE LA SOMMA DELLE DE VARIABILI COME PARAMETRO
 // const sumNumbers = (firstNumber, secondNumber) => firstNumber + secondNumber;
     
@@ -72,12 +72,12 @@ function playOddOrEven() {
     const computerNumber = generateRandomNumber(maxNumber, minNumber);
     console.debug("computerNumber", computerNumber);
     
-    // * NB: QUESTA FUNZIONE, SICCOME SOMMO SEMPRE LE STESSE DUE VARIABILI, NON SERVE
+    // * NB: LA FUNZIONE SUM, SICCOME SOMMO SEMPRE LE STESSE DUE VARIABILI, NON SERVE
     // * POSSO PASSARE DIRETTAMENTE LA SOMMA DELLE DE VARIABILI COME PARAMETRO
     // const sum = sumNumbers(userNumber, computerNumber);
     // console.debug("sum", sum);
     
-    // * NB: QUESTA FUNZIONE, SICCOME SOMMO SEMPRE LE STESSE DUE VARIABILI, NON SERVE
+    // * NB: LA FUNZIONE SUM, SICCOME SOMMO SEMPRE LE STESSE DUE VARIABILI, NON SERVE
     // * POSSO PASSARE DIRETTAMENTE LA SOMMA DELLE DE VARIABILI COME PARAMETRO
     // const isOddOrEven = checkIfOddOrEven(sum);
     const isOddOrEven = checkIfOddOrEven(userNumber + computerNumber);
@@ -89,7 +89,11 @@ function playOddOrEven() {
     } else {
         computerScore ++;
     }
-    showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven, userScore, computerScore);
+
+    // * NB: LA FUNZIONE SUM, SICCOME SOMMO SEMPRE LE STESSE DUE VARIABILI, NON SERVE
+    // * POSSO PASSARE DIRETTAMENTE LA SOMMA DELLE DE VARIABILI COME PARAMETRO
+    // showAllData(victoryMessage, userChoice, userNumber, computerNumber, sum, isOddOrEven, userScore, computerScore);
+    showAllData(victoryMessage, userChoice, userNumber, computerNumber, userNumber + computerNumber, isOddOrEven, userScore, computerScore);
     numberInput.value = generateRandomNumber(maxNumber, minNumber);
 };
 
